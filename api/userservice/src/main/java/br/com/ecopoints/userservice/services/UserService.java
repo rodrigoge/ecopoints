@@ -6,6 +6,7 @@ import br.com.ecopoints.userservice.dto.UserTO;
 import br.com.ecopoints.userservice.exceptions.ErrorTypeEnum;
 import br.com.ecopoints.userservice.exceptions.FlowException;
 import br.com.ecopoints.userservice.mappers.UserMapper;
+import br.com.ecopoints.userservice.utils.Utils;
 import br.com.ecopoints.userservice.validators.UserValidator;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,14 @@ public class UserService {
     @Autowired
     private UserValidator userValidator;
 
+    @Autowired
+    private Utils utils;
+
     public UserTO create(User request) {
         log.info("Starting create a new user flow.");
         userValidator.validatingNullableFieldsUser(request);
         userValidator.validatingEmailAlreadyExists(request.getEmail());
+        utils.encryptPassword(request);
         log.info("Saving a new user in database. " + request);
         var user = userRepository.save(request);
         log.info("Mapping user object. " + user);

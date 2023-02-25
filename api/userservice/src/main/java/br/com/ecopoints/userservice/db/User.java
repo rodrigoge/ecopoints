@@ -43,6 +43,5 @@ public class User {
 
     @Column
     @NotBlank(message = "Password mustn't be empty")
-    @Size(min = 3, max = 10, message = "Password must be between {min} and {max} characters")
     private String password;
 }
