@@ -35,7 +35,7 @@ public class User {
     @Size(min = 2, max = 250, message = "Name must be between {min} and {max} characters")
     private String name;
 
-    @Column
+    @Column(unique = true)
     @Email(message = "Format invalid for e-mail")
     @NotBlank(message = "E-mail mustn't be empty")
     @Size(min = 2, max = 250, message = "E-mail must be between {min} and {max} characters")
