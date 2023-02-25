@@ -1,0 +1,1 @@
+INSERT INTO public."users" ("name", "email", "password") VALUES('Admin', 'admin@eco.com.br', 'Admin123');
