@@ -3,14 +3,11 @@ package br.com.ecopoints.userservice.services;
 import br.com.ecopoints.userservice.db.User;
 import br.com.ecopoints.userservice.db.UserRepository;
 import br.com.ecopoints.userservice.dto.UserTO;
-import br.com.ecopoints.userservice.exceptions.ErrorTypeEnum;
-import br.com.ecopoints.userservice.exceptions.FlowException;
 import br.com.ecopoints.userservice.mappers.UserMapper;
 import br.com.ecopoints.userservice.utils.Utils;
 import br.com.ecopoints.userservice.validators.UserValidator;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
