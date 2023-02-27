@@ -7,12 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorTypeEnum {
 
-    DATABASE("DATABASE"),
-    INVALID_REQUEST("INVALID_REQUEST"),
-    INTERNAL_SERVER("INTERNAL_SERVER"),
-    NOT_FOUND("NOT_FOUND"),
-    BAD_GATEWAY("BAD_GATEWAY"),
-    MAPPING("MAPPING");
-
-    private final String description;
+    DATABASE,
+    INVALID_REQUEST,
+    INTERNAL_SERVER,
+    NOT_FOUND,
+    BAD_GATEWAY,
+    MAPPING;
 }

@@ -28,4 +28,10 @@ public class ObjectTest {
         assertThat(userTO.getName()).isEqualTo("Admin");
         assertThat(userTO.getEmail()).isEqualTo("admin@admin.com");
     }
+
+    @Test
+    void createUserConstructor() {
+        var user = new User();
+        assertThat(user).isNotNull();
+    }
 }
