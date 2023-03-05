@@ -2,11 +2,9 @@ package br.com.ecopoints.userservice.db;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -21,7 +19,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -52,12 +50,9 @@ public class User implements UserDetails {
     @NotBlank(message = "Password mustn't be empty")
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Profile> profiles;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.profiles;
+        return List.of();
     }
 
     @Override

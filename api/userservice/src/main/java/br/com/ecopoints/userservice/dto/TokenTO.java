@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,6 +15,9 @@ import lombok.Setter;
 @Builder
 public class TokenTO {
 
-    private String type;
     private String token;
+
+    private Date tokenExpiration;
+
+    private UserTO user;
 }
